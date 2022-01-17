@@ -1,0 +1,18 @@
+.contactlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contactlistitem {
+  margin: 10px;
+}
+.itemcontentwrap {
+  display: inline-flex;
+  align-items: center;
+}
+.contactname {
+  font-weight: 600;
+}
+.contactnumber {
+  margin-left: 10px;
+}
