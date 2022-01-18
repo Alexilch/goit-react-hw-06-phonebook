@@ -11,9 +11,11 @@ const ContactForm = ({ onSubmit }) => {
     switch (name) {
       case 'name':
         setName(value);
+        // console.log(value);
         break;
       case 'number':
         setNumber(value);
+        // console.log(value);
         break;
 
       default:

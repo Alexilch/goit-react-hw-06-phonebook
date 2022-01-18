@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import * as actions from './redux/actions';
+import { addContact, deleteContact, changeFilter } from './redux/actions';
 import { filteredContacts, getFilter } from './redux/selectors.js';
 
 import './App.css';
@@ -24,8 +24,8 @@ const App = () => {
     );
 
     if (!existingName) {
-      const contactId = { id: nanoid(5) };
-      dispatch(actions.addContact([...contacts, { ...contactId, ...data }]));
+      const Id = { id: nanoid(5) };
+      dispatch(addContact([...contacts, { ...Id, ...data }]));
     } else {
       error({
         text: `${existingName.name} is already in the list!`,
@@ -35,12 +35,12 @@ const App = () => {
   };
 
   const contactDelete = id => {
-    dispatch(actions.deleteContact(id));
+    dispatch(deleteContact(id));
   };
 
   const onFilter = event => {
     const { value } = event.currentTarget;
-    dispatch(actions.changeFilter(value));
+    dispatch(changeFilter(value));
   };
 
   return (
